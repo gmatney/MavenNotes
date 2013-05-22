@@ -1,0 +1,16 @@
+#Going through book:  Maven: The Definitive Guide
+
+http://maven.apache.org
+
+http://www.nabble.com/Maven---Users-f178.html
+http://maven.apache.org/mail-lists.html
+
+
+http://www.sonatype.com/book/mvn-examples-1.0.zip
+http://www.sonatype.com/book/examples-1.0
+
+#About create depreciation into generate
+http://stackoverflow.com/questions/5209343/whats-the-difference-between-mvn-archetypegenerate-and-mvn-archetypecreate
+
+
+

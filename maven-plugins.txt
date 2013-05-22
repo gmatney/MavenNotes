@@ -1,0 +1,7 @@
+
+#Maven Help plugin
+	mvn help:describe -Dplugin=help
+	mvn help:describe -Dplugin=help -Dfull
+	mvn help:describe -Dplugin=compiler -Dmojo=compile -Dfull
+
+#A plugin goal is known as a Mojo

@@ -1,0 +1,32 @@
+#Use maven to get the simple project
+mvn archetype:create -DgroupId=org.sonatype.mavenbook.ch03 \
+					-DartifactId=simple \
+					-DpackageName=org.sonatype.mavenbook
+#note, it seems create is now depreciated.
+#Should be "generate"
+					
+#Install the dependencies 
+cd simple
+maven install
+
+#Run the simple hello world project
+java -cp target/simple-1.0-SNAPSHOT.jar org.sonatype.mavenbook.App
+
+#See what the target structure looks like
+find target/ -print
+cat target/maven-archiver/pom.properties
+cat target/surefire-reports/org.sonatype.mavenbook.AppTest.txt
+cat target/surefire-reports/TEST-org.sonatype.mavenbook.AppTest.xml
+
+#See effective POM (It's much longer than actual POM)
+mvn help:effective-pom
+
+#Create documentation and reports
+mvn site
+
+#View some saved settings
+#Note robot is a link to my windows user folder
+	ls -ltr ~/robot/.m2
+	vi ~/robot/.m2/settings.xml
+	ls -ltr ~/robot/.m2/repository
+	find ~/robot/.m2/repository -maxdepth 2 -print

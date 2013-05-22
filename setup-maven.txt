@@ -1,0 +1,21 @@
+http://maven.apache.org
+
+#in cygwin
+	cd /usr/local
+	unzip apache-maven-3.0.5-bin.zip
+	mv apache-maven-3.0.5 lib/
+	cd bin
+	ln -s ../lib/apache-maven-3.0.5 maven
+	export M2_HOME=/usr/local/bin/maven
+	export PATH=${M2_HOME}/bin:${PATH}
+	#Test it works
+	mvn -version
+#Restart Cygwin
+	#Add it to startup
+	vi ~/.bash_profile
+		export M2_HOME=/usr/local/bin/maven
+		export PATH=${M2_HOME}/bin:${PATH}
+#Restart Cygwin
+	mvn -v
+	
+	
