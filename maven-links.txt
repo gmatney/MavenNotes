@@ -12,5 +12,16 @@ http://www.sonatype.com/book/examples-1.0
 #About create depreciation into generate
 http://stackoverflow.com/questions/5209343/whats-the-difference-between-mvn-archetypegenerate-and-mvn-archetypecreate
 
+#link to api for little bit more complicated project
+http://developer.yahoo.com/weather/
 
+#Where to find POM dependencies
+http://www.mvnrepository.com.
+
+
+#Since above book example links don't work, trying to find the ones that do
+http://www.sonatype.com/resources/books/maven-the-complete-reference
+http://books.sonatype.com/mvnref-book/reference/index.html
+http://books.sonatype.com/mvnex-book/reference/public-book.html     <--- This one looks right.
+	(looks like Maven: The Definitive Guide, but up-to-date) 
 
