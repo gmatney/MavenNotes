@@ -1,4 +1,12 @@
 # A slightly more complicated project
+
+#download the whole source to make it quicker
+wget http://www.sonatype.com/books/mvnex-book/mvnex-examples.zip
+unzip mvnex-examples.zip
+cd ch-custom/
+ 
+ 
+
 mvn archetype:create -DgroupId=org.sonatype.mavenbook.ch04 \
 					-DartifactId=simple-weather \
 					-DpackageName=org.sonatype.mavenbook \
@@ -6,3 +14,85 @@ mvn archetype:create -DgroupId=org.sonatype.mavenbook.ch04 \
 					
 mvn archetype:create -DgroupId=org.sonatype.mavenbook.ch04 -DartifactId=simple-weather -DpackageName=org.sonatype.mavenbook -Dversion=1.0
 find simple-weather/ -print
+
+
+less simple-weather/pom.xml
+
+# Add the new bits described here: http://books.sonatype.com/mvnex-book/reference/customizing-sect-add-depend.html
+# Velocity =  
+# dom4j    = an easy to use, open source library for working with XML, XPath and XSLT on the Java platform
+#            using the Java Collections Framework and with full support for DOM, SAX and JAXP.
+# jaxen    = an open source XPath library written in Java. It is adaptable to many different object models,
+#            including DOM, XOM, dom4j, and JDOM.  Is it also possible to write adapters that treat 
+#            non-XML trees such as compiled Java byte code or Java beans as XML, thus enabling you to 
+#            query these trees with XPath too.
+# velocity = a free open-source templating engine.
+
+
+#Add resource files http://books.sonatype.com/mvnex-book/reference/customizing-sect-add-resources.html
+
+
+#Or just go to the ones you downloaded
+cd mvnexbook-examples-1.0/ch-custom/simple-weather
+mvn install
+
+#Run the commands
+	#uses default zip of 60202
+	mvn exec:java -Dexec.mainClass=org.sonatype.mavenbook.weather.Main
+	mvn exec:java -Dexec.mainClass=org.sonatype.mavenbook.weather.Main -Dexec.args="70112"
+
+#Learn about Exec plugin by Mojo project hosted by Codehaus
+	#This will list all of the goals that are available in the Maven Exec plugin
+	mvn help:describe -Dplugin=exec -Dfull | less
+
+
+#View details of project plugins
+	#Show dependencies for your project
+	mvn dependency:resolve
+
+	#This goal shows how the dependencies relate to one another
+	mvn dependency:tree
+
+	#Veiw full dependency trail, and which may have been removed due to conflicts of version
+	mvn install -X
+
+
+
+#Add some test cases
+http://books.sonatype.com/mvnex-book/reference/customizing-sect-writing-tests.html
+
+#Test scope dependencies
+http://books.sonatype.com/mvnex-book/reference/customizing-sect-test-scope.html
+	#Apache Commons IO  = is a library of utilities to assist with developing IO functionality.
+	# IOUtils.toString( expected_InputStream_object )
+	
+	#After adding 
+	#   mvn dependency:resolve will have coomons-io with dependency scope "test"
+
+	#test-scoped dependencies are available on the classpath only during test compilation and test execution
+	# Just use <scope>test</scope>  in pom
+
+#Run Tests (also happens when doing goals "mvn package" or "mvn install")
+mvn test 
+
+
+#To keep going even if there is a failure, do in pugin:
+	#See http://books.sonatype.com/mvnex-book/reference/customizing-sect-executing-tests.html
+					<configuration>
+						<testFailureIgnore>true</testFailureIgnore>
+					</configuration>
+	#Also
+		mvn test -Dmaven.test.failure.ignore=true
+		
+	# Or can skip them
+		mvn install -Dmaven.test.skip=true
+
+#Change Pom to allow building jars
+# http://books.sonatype.com/mvnex-book/reference/customizing-sect-custom-packaged.html
+	cd target
+	java -cp simple-weather-1.0-jar-with-dependencies.jar \
+		   org.sonatype.mavenbook.weather.Main 10002
+	
+	
+		
+ 

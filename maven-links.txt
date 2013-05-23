@@ -25,3 +25,14 @@ http://books.sonatype.com/mvnref-book/reference/index.html
 http://books.sonatype.com/mvnex-book/reference/public-book.html     <--- This one looks right.
 	(looks like Maven: The Definitive Guide, but up-to-date) 
 
+#Search sonatype's nexus repository	  (try typing in:  dom4j, jaxen, velocity, commons-io)
+https://repository.sonatype.org/index.html
+
+
+http://dom4j.sourceforge.net/
+http://jaxen.codehaus.org/
+http://velocity.apache.org/
+http://commons.apache.org/proper/commons-io/  (IOUtils  class)
+
+
+
