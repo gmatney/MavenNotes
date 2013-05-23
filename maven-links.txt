@@ -34,5 +34,8 @@ http://jaxen.codehaus.org/
 http://velocity.apache.org/
 http://commons.apache.org/proper/commons-io/  (IOUtils  class)
 
-
-
+#Eclipse maven plugin
+ m2eclipse 
+ http://maven.apache.org/eclipse-plugin.html
+ http://eclipse.org/m2e/
+ 

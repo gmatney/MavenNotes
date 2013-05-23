@@ -1,0 +1,5 @@
+http://books.sonatype.com/m2eclipse-book/reference/install-sect-marketplace.html
+
+Eclipse marketplace
+	maven integration for eclipse (2)
+	subeclipse
